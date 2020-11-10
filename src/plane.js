@@ -16,16 +16,13 @@ cc.Class({
 
         // this.node.on('touchend',function(){}, this.node);
 
+        // this.game = cc.find('/playScene').getComponent('Game');
         cc.director.getCollisionManager().enabled = true;
         this.onDrag();
         this.onTouchBegan();
     },
 
     onTouchBegan(event, touch) {
-
-        this.x += touch.getLocation().x;
-        this.y += touch.getLocation().y;
-        console.log('touch');
     },
 
     onDrag() {
@@ -58,14 +55,10 @@ cc.Class({
         this.node.setPosition(location);
     },
 
-    onCollision() {
-        if (this.node.group == 'enemy') {
-            var pos = this.node.getPosition();
-            this.node.destroy();
-            this.playScene.gameOver();
-        } else {
-            return false;
-        }
+    onCollisionEnter() {
+        cc.director.loadScene('gameover');
+        this.node.stopAllActions();
+        cc.log('gameover');
     },
 
     // update (dt) {},

@@ -1,11 +1,40 @@
 {
   "start-scene": "d8c52c5b-e3d1-487e-abaa-71a3027b6b19",
   "group-list": [
-    "default"
+    "default",
+    "bullet",
+    "enemy",
+    "plane",
+    ""
   ],
   "collision-matrix": [
     [
       true
+    ],
+    [
+      false,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false
     ]
   ],
   "excluded-modules": [
